@@ -1,0 +1,41 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from '../components/Button.astro';
+import Link from '../components/Link.astro';
+import { Image } from 'astro:assets';
+import Billede1 from "../assets/images/om-os-billede-1.png";
+import Billede2 from "../assets/images/om-os-billede-2.png";
+import Billede3 from "../assets/images/om-os-billede-3.png";
+---
+
+<MainLayout title="Titel">
+	<article id="sec-1" class="grid md:grid-cols-2 pt-xl">
+<Image class="w-full" src={Billede1} alt="Billede af kiosken"/>
+<div class="flex flex-col justify-center gap-xxs md:px-sm -order-1 md:order-1 pt-xl pb-sm md:pt-none md:pb-none">
+	<h1 class="display-tekst md:text-left text-center">Om os</h1>
+	<p class="hidden md:block">Hos Fatter & Havmanden er vi mere til håndplukkede varer, lidt nostalgi i posen og en god sludder over disken. Vi er selv vokset op med den lokale kiosk, hvor man blandede slik for en tier, fik en is med flødebolle på toppen og altid lige hilste på nogen man kendte.</p>
+<p class="hidden md:block">
+Vi har skabt Fatter & Havmanden som en hyldest til den klassiske kiosk – ikke en poleret convenience store, men et rigtigt sted med personlighed, skæve hylder og varer valgt med både kærlighed for kvalitet og hvad vi købte i gamle dage.</p>
+</div>
+	</article>
+    <div class="md:hidden block p-s">
+<p class="pb-xs">Hos Fatter & Havmanden er vi mere til håndplukkede varer, lidt nostalgi i posen og en god sludder over disken. Vi er selv vokset op med den lokale kiosk, hvor man blandede slik for en tier, fik en is med flødebolle på toppen og altid lige hilste på nogen man kendte.</p>
+<p class="">Vi har skabt Fatter & Havmanden som en hyldest til den klassiske kiosk – ikke en poleret convenience store, men et rigtigt sted med personlighed, skæve hylder og varer valgt med både kærlighed for kvalitet og hvad vi købte i gamle dage.</p>
+    </div>
+    <article id="sec-2" class="grid grid-cols-1 md:grid-cols-2">
+<div class="flex flex-col justify-center gap-xs p-s md:px-sm pt-m pb-sm md:pt-none md:pb-none order-1 md:-order-1">
+	<h1 class="display-tekst md:text-left text-center">Vi er din købmand</h1>
+	<p>Her er der ikke noget prætentiøst fnuller, bare gode ting, man kan forstå. Kvalitet, der holder. Mad, drikke og små lækkerier, du faktisk har lyst til at købe – uden at skulle google, hvad halvdelen af ingredienserne betyder. Og vi har altid et alternativ, hvis du spørger. For vi tror på, at alle skal kunne få god kvalitet – uanset om det er til fredagsslik, tømmermænd eller et "jeg-får-besøg-og-har-glemt-at-købe-noget"-øjeblik.</p>
+    <p>Vi indkøber det, vi selv kan li’. Det er måske ikke raketvidenskab, men det virker. Vi stoler på vores mavefornemmelse – og på din, når du kommer ind og spørger efter noget specifikt.</p>
+</div>
+<Image class="w-full" src={Billede2} alt="Billede af kiosken indeni"/>
+	</article>
+    <article id="sec-3" class="grid md:grid-cols-2">
+<Image class="w-full" src={Billede3} alt="Billede af to personer der drikker øl"/>
+<div class="flex flex-col justify-center p-s md:px-sm gap-xxs pt-m pb-sm md:pt-none md:pb-none">
+	<h1 class="display-tekst md:text-left text-center">vær med</h1>
+	<p>Fatter & Havmanden er ikke fancy – og det er vi stolte af. Vi er bare os. En god blanding af lokalhjørne, barndomsminder, gode grin og kærlighed til det nære.</p>
+<p>Kom forbi. Tag børnene med. Eller kom alene og lad som om det er til børnene. Vi dømmer ikke, vi glæder os bare til at se dig!</p>
+</div>
+	</article>
+</MainLayout>

@@ -1,0 +1,49 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from '../components/Button.astro';
+import Link from '../components/Link.astro';
+import Billede1 from "../assets/images/folg-med.png";
+import { Image } from 'astro:assets';
+import Folgmed from '../components/folg-med-maps.astro';
+import Facebook from "../assets/images/facebook-ikon.png";
+import Instagram from "../assets/images/instagram-ikon.png";
+import Mail from "../assets/images/mail-ikon.png";
+import KlisterBg from "../assets/images/aabningstider-bg.png";
+import LogoMaskot from "../assets/images/fatter-maskot.png";
+---
+<MainLayout>
+    <article id="sec-1" class="grid md:grid-cols-2 pt-xl pb-lg">
+<Image class="w-full" src={Billede1} alt="Billede af kiosken"/>
+<div class="flex flex-col justify-center md:gap-s gap-xxs md:px-sm -order-1 md:order-1 pt-xl pb-sm md:pt-md md:pb-none">
+	<h1 class="display-tekst md:text-left text-center">Følg med</h1>
+	<p class="hidden md:block">Hos Fatter & Havmanden elsker vi at finde på ting – især når solen skinner, og der er god stemning i gaden!<br>
+Vi er ikke bare en kiosk – vi er et hangout. Et sted man hænger ud, hænger i og hænger på. Vi har skabt Fatter & Havmanden som en hyldest til den klassiske kiosk – et sted med personlighed, skæve hylder og varer valgt med både kærlighed for kvalitet og hvad vi købte i gamle dage.</p>
+<p class="hidden md:block">Vil du vide, hvornår der sker noget? Eller bare være den første til at høre, når vi får nye varer, nyt slik eller et mærkeligt men lækkert batch hjem fra en lille producent? Så hop ind og følg os på vores sociale medier. Der deler vi alt det gode – og du kan være med, lige dér hvor det sker. Ses vi?</p>
+</div>
+<div class="md:hidden block p-s">
+<p>Hos Fatter & Havmanden er vi mere til håndplukkede varer, lidt nostalgi i posen og en god sludder over disken. Vi er selv vokset op med den lokale kiosk, hvor man blandede slik for en tier, fik en is med flødebolle på toppen og altid lige hilste på nogen man kendte.</p>
+<p class="pt-s">Vi har skabt Fatter & Havmanden som en hyldest til den klassiske kiosk – ikke en poleret convenience store, men et rigtigt sted med personlighed, skæve hylder og varer valgt med både kærlighed for kvalitet og hvad vi købte i gamle dage.</p>
+    </div>
+	</article>
+	
+  <article id="so-me" class="flex flex-col w-screen justify-center items-center md:m-auto pt-xxs md:pt-lg pb-ml md:pb-2xl lg:pt-none" >
+	<Image class="hidden md:block md:h-[560px] w-auto absolute z-10" src={KlisterBg} alt="billede af kiosk"/>
+	<h4 class="md:hidden block">Lad os holde kontakten</h4>
+		<div class="z-20 mx-m md:h-[500px] h-auto flex flex-col md:flex-row justify-center items-center px-3xl py-ml md:py-sm bg-beige-200 md:bg-transparent shadow-long md:shadow-none">
+			<div class=" flex flex-col justify-center items-center">
+				<h4 class="hidden md:block">Lad os holde kontakten</h4>
+				<div class="flex flex-col md:flex-row h-auto md:h-2xl gap-sm md:gap-m">
+					 <Link href="https://www.facebook.com/fatteroghavmanden/?locale=da_DK">
+    <Image class="w-xl md:w-2xl lg:w-1xl h-auto transition-all ease-in hover:scale-105" src={Facebook} alt="Logo maskot"/></Link>
+    <Link href="https://www.instagram.com/fatteroghavmanden/?hl=en">
+    <Image class="w-xl md:w-2xl lg:w-1xl h-auto transition-all ease-in hover:scale-105" src={Instagram} alt="Logo maskot"/></Link>
+    <Link href="mailto:fatterhavmand@gmail.com">
+    <Image class="w-xl md:w-2xl lg:w-1xl h-auto transition-all ease-in hover:scale-105" src={Mail} alt="Logo maskot"/></Link>
+			</div>
+			</div>
+			<Image class="w-auto md:w-6xl lg:w-7xl h-auto" src={LogoMaskot} alt="Logo maskot"/>
+		</div>
+	</article>
+    <Folgmed></Folgmed>
+	<div class="pb-2xl"></div>
+</MainLayout>

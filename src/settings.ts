@@ -1,0 +1,4 @@
+export const apiDetails = {
+  supabaseUrl: "https://joqixkqphbphzoqtefny.supabase.co",
+  supabaseAnonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpvcWl4a3FwaGJwaHpvcXRlZm55Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc5MjEyMTMsImV4cCI6MjA2MzQ5NzIxM30.gCRDWNN0Mm9Ns0t1q_ivM2sfWtc6YIjKmhGWerzOnDE",
+};

@@ -1,0 +1,89 @@
+---
+//ts-nocheck
+import MainLayout from "../../layouts/MainLayout.astro";
+import Button from '../../components/Button.astro';
+import Link from '../../components/Link.astro';
+import { Image } from 'astro:assets';
+import logo from "../../assets/images/logo-red.svg";
+import Map from '../../components/folg-med-maps.astro';
+import { apiDetails } from "../../settings";
+import LogoMaskot from "../../assets/images/fatter-maskot.png";
+import Produktbg from "../../assets/images/shop-bg-singleview.jpg";
+import KlisterBg from "../../assets/images/aabningstider-bg.png";
+import Facebook from "../../assets/images/facebook-ikon.png";
+import Instagram from "../../assets/images/instagram-ikon.png";
+import Mail from "../../assets/images/mail-ikon.png";
+
+export async function getStaticPaths() {
+  const res = await fetch(`${apiDetails.supabaseUrl}/rest/v1/products?select=*`, {
+    headers: {
+      apikey: apiDetails.supabaseAnonKey,
+      Authorization: `Bearer ${apiDetails.supabaseAnonKey}`,
+    },
+  });
+  const data = await res.json();
+
+  return data.map((product) => {
+    return {
+      params: { slug: product.slug },
+      props: { myProduct: product },
+    };
+  });
+}
+
+
+const { myProduct } = Astro.props;
+---
+<MainLayout title="Titel"> 
+  <a href="/produktliste" class="">
+<div class="pt-4xl block md:hidden mx-sm">
+  <svg width="48" height="27" viewBox="0 0 48 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.198242 14.7886C0.198222 9.40957 9.40699 4.21784 12.5824 1.97556C17 -1 20.2034 1.01458 22.7437 1.97556C24.776 2.74434 16.493 7.54417 13 10C18.7158 7.75772 44.6542 9.66338 46.5595 10.304C48.0837 10.8166 47 16 43.7016 16.7106C42 17.0771 40.0816 16.0699 35.763 14.7886C31.4444 13.5073 17.6631 14.2547 11.3122 14.7886C15.2286 16.2834 23.5059 19.5935 25.2841 20.8748C27.0624 22.1561 26.0251 24.8255 25.2841 26C24 28.5 0.198254 18 0.198242 14.7886Z" fill="#BF1800"/>
+</svg>
+</div>
+  </a>
+  
+<article id="produkt" class="grid md:grid-cols-2 pt-s md:pt-6xl">
+<div class="overflow-hidden grid relative items-center justify-self-center justify-center w-7xl h-7xl md:w-9xl md:h-9xl md:bg-no-repeat md:bg-contain md:bg-center" style="background-image: url('../shop-bg-singleview.jpg');">
+            <img src={`/product_images/${myProduct.image}`} alt={myProduct.name} class="z-20 object-cover w-auto h-7xl md:h-8xl p-xxs" />
+			<Image class="h-9xl w-auto absolute z-10" src={Produktbg} alt="billede af kiosk"/>
+       <a href="/produktliste" class="">
+<div class="md:absolute md:block hidden z-20 left-xs top-xs">
+  <svg width="48" height="27" viewBox="0 0 48 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.198242 14.7886C0.198222 9.40957 9.40699 4.21784 12.5824 1.97556C17 -1 20.2034 1.01458 22.7437 1.97556C24.776 2.74434 16.493 7.54417 13 10C18.7158 7.75772 44.6542 9.66338 46.5595 10.304C48.0837 10.8166 47 16 43.7016 16.7106C42 17.0771 40.0816 16.0699 35.763 14.7886C31.4444 13.5073 17.6631 14.2547 11.3122 14.7886C15.2286 16.2834 23.5059 19.5935 25.2841 20.8748C27.0624 22.1561 26.0251 24.8255 25.2841 26C24 28.5 0.198254 18 0.198242 14.7886Z" fill="#FDF9F6"/>
+</svg>
+</div>
+  </a>
+        </div>  
+<div class="flex flex-col pt-sm pb-sm md:px-none px-m md:pt-none md:pb-none">
+	<div class="flex flex-col">  
+  <h3>{myProduct.name}</h3>
+    <h4 class="text-brun-700">{myProduct.price} kr</h4>
+</div>
+    <p class="max-w-none md:max-w-lg">{myProduct.description}</p>
+	<h6 class="pt-xxs">Indhold: {myProduct.indhold}</h6>
+	<h6 class="pt-xxs">{myProduct.alkohol}</h6>
+</div>
+	</article>
+
+  <article id="andre-varer" class="flex flex-col w-screen justify-center items-center md:m-auto pt-lg pb-ml md:pb-2xl lg:pt-lg" >
+	<Image class="hidden md:block md:h-[560px] w-auto absolute z-10" src={KlisterBg} alt="billede af kiosk"/>
+	<h4 class="md:hidden block">Lad os holde kontakten</h4>
+		<div class="z-20 mx-m md:h-[500px] h-auto flex flex-col md:flex-row justify-center items-center px-3xl py-sm bg-beige-200 md:bg-transparent shadow-long md:shadow-none">
+			<div class=" flex flex-col justify-center items-center">
+				<h4 class="hidden md:block">Lad os holde kontakten</h4>
+				<div class="flex flex-col md:flex-row h-auto md:h-2xl gap-sm md:gap-m">
+          <Link href="https://www.facebook.com/fatteroghavmanden/?locale=da_DK">
+    <Image class="w-xl md:w-2xl lg:w-1xl h-auto transition-all ease-in hover:scale-105" src={Facebook} alt="Logo maskot"/></Link>
+    <Link href="https://www.instagram.com/fatteroghavmanden/?hl=en">
+    <Image class="w-xl md:w-2xl lg:w-1xl h-auto transition-all ease-in hover:scale-105" src={Instagram} alt="Logo maskot"/></Link>
+    <Link href="mailto:fatterhavmand@gmail.com">
+    <Image class="w-xl md:w-2xl lg:w-1xl h-auto transition-all ease-in hover:scale-105" src={Mail} alt="Logo maskot"/></Link>
+			</div>
+			</div>
+			<Image class="w-auto md:w-6xl lg:w-7xl h-auto" src={LogoMaskot} alt="Logo maskot"/>
+		</div>
+	</article>
+<Map/>
+<div class="pb-2xl"></div>
+</MainLayout>

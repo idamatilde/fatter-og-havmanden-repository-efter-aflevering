@@ -1,0 +1,31 @@
+---
+const {variant="primary", size="medium", href="#"} = Astro.props;
+
+const buttonStyling = " rounded-border_radius-sm tracking-wide transition ease-in-out delay-100"; 
+
+const variantClasses = {
+"textlink": "underline",
+
+"primary": " bg-beige-200 text-red-700 shadow-button hover:shadow-none hover:text-red-500 hover:bg-beige-300",
+
+"secondary": "bg-blue-100 text-blue-1100 shadow-button hover:shadow-none",
+
+};
+
+const sizeClasses = {
+
+"large": "text-sm py-xs px-lg",
+
+"medium": "text-smallDesk py-xxs w-6xl",
+
+"small": "text-bodyDesk py-[5px] px-s",
+
+"mobile": "text-smallMobile py-[4px] px-s"
+
+};
+---
+<a href={href}>
+    <button class:list={[buttonStyling, variantClasses[variant], sizeClasses[size]]}><slot /></button>
+</a>
+
+

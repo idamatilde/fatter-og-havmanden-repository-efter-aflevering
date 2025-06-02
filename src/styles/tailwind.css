@@ -1,0 +1,84 @@
+/* import af adobe-font */
+@import url("https://p.typekit.net/p.css?s=1&k=ndv8zye&ht=tk&f=35889&a=166098997&app=typekit&e=css");
+
+/* import af google font */
+@import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+font-family:"eds-market-narrow-slant";
+src:url("https://use.typekit.net/af/797c1b/00000000000000007735a9e5/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/797c1b/00000000000000007735a9e5/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/797c1b/00000000000000007735a9e5/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+font-display:auto;
+font-style:normal;
+font-weight:400;
+font-stretch:normal;
+}
+
+@layer base{
+.edsmarket {
+    font-family: "eds-market-narrow-slant";
+    font-weight: 700;
+  }
+
+.display-tekst{
+  font-size: 4.488rem;
+  line-height: 4rem;
+}
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6{
+    font-family: "eds-market-narrow-slant";
+  }
+
+ p,
+  summary {
+    font-family: "Gabarito";
+  }
+
+  h1 {
+    @apply text-largeMobile md:text-largeDesk text-red-700 md:pb-xxs;
+  }
+  h2 {
+    @apply text-mediumLargeMobile  md:text-mediumLargeDesk text-red-700 md:pb-xxs;
+  }
+  h3 {
+    @apply text-mediumMobile   md:text-mediumDesk text-blue-600 md:pb-xxs;
+  }
+  h4 {
+    @apply text-smallMediumMobile md:text-smallMediumDesk text-blue-600 md:pb-xxs;
+  }
+  h5 {
+    @apply text-smallMobile md:text-smallDesk md:pb-xxs;
+  }
+  h6,
+  summary,
+  span {
+    @apply text-baseMobile md:text-baseDesk ;
+  }
+  p {
+    @apply text-bodyMobile md:text-bodyDesk  ;
+  }
+}
+
+@media (min-width: 769px) {
+  /* General classnames */
+  .pc-only {
+    display: block;
+  }
+
+  .pc-hide {
+    display: none;
+  }
+
+  .display-tekst{
+  font-size: 8rem;
+  line-height: 7.5rem;
+}
+}

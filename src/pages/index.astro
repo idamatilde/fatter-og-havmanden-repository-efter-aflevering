@@ -1,0 +1,101 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from '../components/Button.astro';
+import Link from '../components/Link.astro';
+import { Image } from 'astro:assets';
+import LogoMaskot from "../assets/images/fatter-maskot.png";
+import ForsideCards from "../components/forside-cards.astro"
+---
+
+<MainLayout title="Titel">
+	<article id="hero-sektion" class="grid md:grid-cols-2 pt-xl pb-xl">
+<video autoplay playsinline loop muted transition:persist>
+  <source
+    src="kvadrat-hero-video.mp4"
+    type="video/mp4"
+  />
+</video>
+<div class="flex flex-col justify-center items-center -order-1 md:order-1 pt-xl pb-sm md:pt-none md:pb-none">
+	<h1 class="display-tekst">kiosk</h1>
+	<h3>mad - drikke - hangout</h3>
+	<h5 class="text-blue-400 text-center">Arresøgade 14 - Nørrebro - 2200 København</h5>
+</div>
+	</article>
+	<article id="vi-onsker" class="flex flex-col mx-s md:mx-2xl mb-xl md:mb-xl">
+		<h1 class="display-tekst text-left text-blue-600 pb-sm">Vi ønsker at være<br>lidt af det hele...</h1>
+		<div class="grid grid-cols-1 md:grid-cols-5 justify-center items-center">
+			<div class="grid gap-xs col-span-2">
+				<p>Vi ved det godt… det er svært at sætte os i bås – og det kan vi faktisk ret godt li’! Vi er ikke bare det ene eller det andet – vi er lidt af det hele… som en god bland-selv-pose med både surt, sødt og andet godt.</p>
+				<p>Hos os finder du det, du mangler – og måske også det, du ikke vidste, du manglede.
+Vi håndplukker varer med kærlighed – både fra de små upcoming brands og bryggerier med skæve ideer og fra de sikre klassikere, der bare kan deres kram.</p>
+				<p>Vi går op i kvalitet, og synes, det er nice at støtte dem, der tør gå deres egne veje - ligesom os.</p>
+			</div>
+			<div class="col-span-3 flex flex-col justify-center items-center m-auto pt-sm md:pt-none">
+				<h3>menu</h3>
+				<div class="grid grid-cols-1 gap-sm md:gap-xs md:grid-cols-2 ">
+					<div>
+						<p class="edsmarket font-regular">Filterkaffe.....................................28 kr</p>
+						<p class="edsmarket font-regular">refill...............................................20 kr</p>
+						<p class="edsmarket font-regular">latte................................................38kr</p>
+						<p class="edsmarket font-regular">cappuccino.....................................38 kr</p>
+						<p class="edsmarket font-regular">flat white.......................................36 kr</p>
+						<p class="edsmarket font-regular">cortado...........................................34kr</p>
+						<p class="edsmarket font-regular">Americano......................................30 kr</p>
+						<p class="edsmarket font-regular">espresso.........................................28 kr</p>
+						<p class="edsmarket font-regular">sing te...............................................38kr</p>
+						<p class="edsmarket font-regular">varm kakao.....................................35 kr</p>
+						<p class="edsmarket font-regular">iskaffe.............................................42 kr</p>
+					</div>
+					<div>
+						<p class="edsmarket font-regular">bolle m. ost.....................................38 kr</p>
+						<p class="edsmarket font-regular">+syltetøj...........................................5 kr</p>
+						<p class="edsmarket font-regular">Dagens udvalg af bagværk ved disken</p>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	<article id="aabningstider" class="m-auto flex flex-col justify-center items-center md:m-auto md:pb-none lg:pt-none md:bg-no-repeat md:bg-contain md:bg-center bg-beige-300 md:bg-beige-300" style="background-image: url('aabningstider-bg.png');" >
+		<div class="md:h-[550px] m-auto w-auto pt-lg pb-ml flex flex-col md:flex-row justify-center items-center md:mx-none bg-beige-100 md:bg-transparent shadow-long md:shadow-none">
+			<div class="mx-m p-m flex flex-col justify-center items-center ">
+				<h2>åbningstider:</h2>
+					<div>
+						<p class="edsmarket font-regular">Mandag.................................Lukket</p>
+						<p class="edsmarket font-regular">Tirsdag.....................................9-18</p>
+						<p class="edsmarket font-regular">Onsdag......................................9-18</p>
+						<p class="edsmarket font-regular">Torsdag....................................9-20</p>
+						<p class="edsmarket font-regular">Fredag......................................9-20</p>
+						<p class="edsmarket font-regular">Lørdag......................................9-20</p>
+						<p class="edsmarket font-regular">Søndag......................................9-17</p>
+					</div>
+				</div>
+				<div>
+				<Image class="w-6xl md:w-6xl lg:w-7xl" src={LogoMaskot} alt="Logo maskot"/>
+			</div>
+			</div>
+		</div>
+	</article>
+	<ForsideCards/>
+	<!-- 
+	<article id="aabningstider" class="flex flex-col w-screen justify-center items-center md:m-auto pt-lg pb-ml md:pb-none lg:pt-none md:bg-no-repeat md:bg-contain md:bg-center bg-beige-200 md:bg-beige-300" style="background-image: url('aabningstider-bg.png');" >
+		<div class="md:h-[500px] mx-m h-auto flex flex-col md:flex-row justify-center items-center md:mx-none bg-beige-200 md:bg-transparent shadow-long md:shadow-none">
+			<div class=" flex flex-col justify-center items-center h-auto">
+				<h2>åbningstider:</h2>
+					<div>
+						<p class="edsmarket font-regular">Mandag.................................Lukket</p>
+						<p class="edsmarket font-regular">Tirsdag.....................................9-18</p>
+						<p class="edsmarket font-regular">Onsdag......................................9-18</p>
+						<p class="edsmarket font-regular">Torsdag....................................9-20</p>
+						<p class="edsmarket font-regular">Fredag......................................9-20</p>
+						<p class="edsmarket font-regular">Lørdag......................................9-20</p>
+						<p class="edsmarket font-regular">Søndag......................................9-17</p>
+					</div>
+				</div>
+				<div>
+				<Image class="w-6xl md:w-6xl lg:w-7xl" src={LogoMaskot} alt="Logo maskot"/>
+			</div>
+			</div>
+		</div>
+	</article> -->
+</MainLayout>

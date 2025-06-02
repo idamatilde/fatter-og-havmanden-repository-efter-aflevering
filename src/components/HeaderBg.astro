@@ -1,0 +1,11 @@
+---
+import { Image } from 'astro:assets';
+import bgContainerDesktop from "../assets/images/header-indhold-bg.png";
+import bgContainerMobile from "../assets/images/header-mobile-bg.png";
+---
+<div class="w-screen overflow-clip relative hidden md:block">
+     <Image src={bgContainerDesktop} class="z-50 w-full" alt=""></Image>
+</div>
+<div class="w-screen overflow-clip relative pc-hide">
+     <Image src={bgContainerMobile} class="z-50 w-full" alt=""></Image>
+</div>

@@ -1,0 +1,18 @@
+---
+import Button from '../components/Button.astro';
+import Link from '../components/Link.astro';
+import Google from "../assets/images/google-maps.png";
+import { Image } from 'astro:assets';
+---
+<article class="grid grid-cols-1 md:grid-cols-2 mx-sm md:mx-none gap-none md:gap-s">
+    
+    <div class="flex flex-col text-center md:text-end">
+        <h2 class="text-blue-700">Besøg os her:</h2>
+        <h4 class="hidden md:block">Arresøgade 14 <br>
+2200 København</h4>
+    </div>
+    <Link href="https://www.google.com/maps/place/Fatter+%26+Havmanden/@55.6972341,12.5530688,17z/data=!3m1!4b1!4m6!3m5!1s0x46525349900f37b1:0x78a3e82b17689ce6!8m2!3d55.6972311!4d12.5556437!16s%2Fg%2F11v6sy0vrk?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D">
+    <Image class="md:h-8xl md:w-auto w-auto h-auto hover:shadow-hover transition-all ease-in" src={Google} alt="Billede af google maps"/></Link>
+    <h4 class="md:hidden block text-right">Arresøgade 14 <br>
+2200 København</h4>
+</article>
