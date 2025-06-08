@@ -34,7 +34,9 @@ export async function getStaticPaths() {
 
 const { myProduct } = Astro.props;
 ---
-<MainLayout title="Produkt"> 
+<MainLayout 
+title="Produkt"
+description="Side med info om den valgte vare"> 
   <a href="/produktliste" class="">
 <div class="pt-4xl block md:hidden mx-sm">
   <svg width="48" height="27" viewBox="0 0 48 27" fill="none" xmlns="http://www.w3.org/2000/svg">
